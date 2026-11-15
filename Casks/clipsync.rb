@@ -4,8 +4,8 @@ cask "clipsync" do
   arch arm: "aarch64", intel: "x64"
 
   version "0.1.0"
-  sha256 arm:   "REPLACE_WITH_SHA256_OF_ARM_DMG",
-         intel: "REPLACE_WITH_SHA256_OF_X64_DMG"
+  sha256 arm:   "7794977149b6ff7dad217ff1743865d8cd32ebade894449210bf3144fecf140f",
+         intel: "84edaa0b7ddb9eb7caa520f88723235c9f9f7e88a36f09560d0585fdb421cb1d"
 
   url "https://github.com/IceMan0D/clipsync/releases/download/v#{version}/ClipSync_#{version}_#{arch}.dmg"
   name "ClipSync"
