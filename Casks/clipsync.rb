@@ -15,9 +15,11 @@ cask "clipsync" do
   app "ClipSync.app"
 
   # Unsigned app: clear the quarantine flag so Gatekeeper doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/ClipSync.app"]
+  postflight_steps do
+    if_path_exists "{{appdir}}/ClipSync.app" do
+      run "/usr/bin/xattr",
+          args: ["-cr", "{{appdir}}/ClipSync.app"]
+    end
   end
 
   zap trash: "~/Library/Application Support/com.iceman0d.clipsync"
